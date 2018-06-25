@@ -7,7 +7,7 @@ This framework worm "Honmaru" aims at Serverless Framework for SAM (*).
 ## Work schedule
 - [ ] design
   - [x] To harden what you want to do
-  - [ ] Make a command system
+  - [x] Make a command system
   - [ ] Make a milestone
 - [ ] Prior verification
   - [ ] ```aws cloudformation package``` Understand what you do with
