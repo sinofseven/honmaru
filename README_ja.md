@@ -9,11 +9,11 @@
   - [x] コマンド体系を作る
   - [x] マイルストーンを作る
 - [ ] 事前検証
-  - [ ] ```aws cloudformation package```でやっていることを理解する
+  - [　] ~~```aws cloudformation package```でやっていることを理解する~~ 当面行わない
   - [ ] Travis CIの使い方を調べる
-  - [ ] Python 3系におけるCLI Tool用フレームワークの選定
+  - [x] Python 3系におけるCLI Tool用フレームワークの選定 ([Click]()を使用することに決定)
   - [ ] Pythonでモジュールを公開する方法を調べる
-  - [ ] changesetを実行する際にRequestId(?)を指定可能かどうか
+  - [x] changesetを実行する際にRequestId(?)を指定可能かどうか (指定可能)
 - [ ] 実装
   - [ ] 設定ファイル, 環境変数, コマンド引数の優先順位の作成とロード機構の実装
   - [ ] deploy/removeの実装
