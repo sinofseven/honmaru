@@ -4,5 +4,8 @@ lint:
 	@pipenv run flake8 src
 
 test-unit:
-	PYTHONPATH=./src \
-	pipenv run pytest tests/unit
+	OLD_DIR=$$PWD; \
+	cd tests/unit; \
+	PYTHONPATH=../../src \
+	pipenv run pytest . ; \
+	cd $$OLD_DIR
