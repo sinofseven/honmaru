@@ -1,7 +1,7 @@
 SHELL = /usr/bin/env bash -xeuo pipefail
 
 lint:
-	@pipenv run flake8 src
+	@pipenv run flake8 src/ tests/
 
 test-unit:
 	OLD_DIR=$$PWD; \
