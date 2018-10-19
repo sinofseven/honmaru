@@ -1,5 +1,6 @@
-import loader
+from config import Config
 
 
-def test_tmp():
-    assert loader.tmp()
+class TestConfig(object):
+    def test_not_exist_honmaru_yml(self):
+        Config()
