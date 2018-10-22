@@ -25,4 +25,8 @@ def read_environments():
 
 class Config(object):
     def __init__(self):
-        read_honmaru_yml()
+        file_option = read_honmaru_yml()
+        env_option = read_environments()
+        option = {k: v for dic in [file_option, env_option] for k, v in dic.items()}
+        self.profile = option.get('profile')
+        self.region = option.get('region')
