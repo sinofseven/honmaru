@@ -1,6 +1,6 @@
 import pytest
 
-from config import Config, read_honmaru_yml
+from config import Config, read_environments, read_honmaru_yml
 
 
 class TestReadHonmaruYml(object):
@@ -39,6 +39,47 @@ class TestReadHonmaruYml(object):
     )
     def test_exist_file(self, put_honmaru_yml, expected):
         actual = read_honmaru_yml()
+        assert actual == expected
+
+
+class TestReadEnvironments(object):
+    @pytest.mark.parametrize(
+        'put_environments, expected', [
+            (
+                {}, {}
+            ),
+            (
+                {'SHELL': 'bash'}, {}
+            ),
+            (
+                {'AWS_PROFILE': 'test-profile-1'},
+                {'profile': 'test-profile-1'}
+            ),
+            (
+                {
+                    'AWS_PROFILE': 'test-profile-2',
+                    'AWS_DEFAULT_REGION': 'ap-northeast-1'
+                },
+                {
+                    'profile': 'test-profile-2',
+                    'region': 'ap-northeast-1'
+                }
+            ),
+            (
+                {
+                    'AWS_PROFILE': 'test-profile-3',
+                    'AWS_DEFAULT_REGION': 'ap-northeast-2',
+                    'SHELL': 'bash'
+                },
+                {
+                    'profile': 'test-profile-3',
+                    'region': 'ap-northeast-2'
+                }
+            )
+        ], indirect=['put_environments']
+    )
+    def test_expected(self, put_environments, expected):
+        actual = read_environments()
         assert actual == expected
 
 
