@@ -1,2 +1,4 @@
 class Config(object):
-    pass
+    def __init__(self):
+        with open('honmaru.yml'):
+            pass
