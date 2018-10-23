@@ -1,6 +1,6 @@
-import pytest
-
 from config import Config, read_environments, read_honmaru_yml
+
+import pytest
 
 
 class TestReadHonmaruYml(object):
