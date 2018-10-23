@@ -5,7 +5,7 @@ from config import Config, read_environments, read_honmaru_yml
 
 class TestReadHonmaruYml(object):
     def test_not_exist_honmaru_yml(self):
-        with pytest.raises(FileNotFoundError):
+        with pytest.raises(Exception):
             read_honmaru_yml()
 
     @pytest.mark.parametrize(
@@ -85,7 +85,7 @@ class TestReadEnvironments(object):
 
 class TestConfig(object):
     def test_not_exist_honmaru_yml(self):
-        with pytest.raises(FileNotFoundError):
+        with pytest.raises(Exception):
             Config()
 
     @pytest.mark.parametrize(
