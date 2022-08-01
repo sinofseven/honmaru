@@ -1,0 +1,11 @@
+int: 1
+bool: true
+str: tttt
+array:
+  - 1
+  - 2
+  - 3
+dict:
+  int: 1
+  bool: true
+  str: tttt
